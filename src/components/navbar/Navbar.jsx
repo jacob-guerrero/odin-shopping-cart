@@ -1,30 +1,29 @@
+import styles from "./Navbar.module.css";
+
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        <a href="/" className="logo">
-          ShopNow
+    <nav className={styles.navbar} role="navigation">
+      <div className={styles.navbarLeft}>
+        <a href="/" className={styles.logo}>
+          Style Heaven
         </a>
       </div>
-      
-      <div className="navbar-center">
-        <ul className="nav-links">
+
+      <div className={styles.navbarCenter}>
+        <ul className={styles.navLinks}>
           <li>
             <a href="/home">Home</a>
           </li>
           <li>
-            <a href="/shop">Shop Now</a>
+            <a href="/shop">Shop</a>
           </li>
         </ul>
       </div>
 
-      <div className="navbar-right">
-        <a href="/cart" className="cart-icon">
+      <div className={styles.navbarRight}>
+        <a href="/cart" className={styles.cartIcon} aria-label="Shopping Cart">
           <i className="fas fa-shopping-cart"></i>
-          <span className="cart-count">0</span>
-        </a>
-        <a href="/account" className="user-icon">
-          <i className="fas fa-user"></i>
+          <span className={styles.cartCount}>0</span>
         </a>
       </div>
     </nav>
