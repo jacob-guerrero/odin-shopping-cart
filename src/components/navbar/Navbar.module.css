@@ -1,12 +1,19 @@
 .navbar {
+  width: 100%;
+  height: 12vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
   padding: 1rem;
   gap: 1rem;
+  margin: 0;
 }
 
+.navbarLeft{
+  width: 70%;
+  display: flex;
+}
 .navbarLeft .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -30,6 +37,7 @@
 .navbarRight {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   font-size: 1.4rem;
 }
 
@@ -49,4 +57,10 @@
   position: absolute;
   top: -0.6rem;
   right: -0.6rem;
+}
+
+@media (max-width: 768px) {
+  .navbarCenter .navLinks {
+    display: none;
+  }
 }
