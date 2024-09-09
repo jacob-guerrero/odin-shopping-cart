@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <div className={styles.heroContainer}>
+      <main className={styles.heroContainer}>
         <div className={styles.heroImageContainer}>
           <img
             src="src\assets\model1-home.jpg"
@@ -23,7 +23,7 @@ const Home = () => {
             <button>Shop Now</button>
           </Link>
         </div>
-      </div>
+      </main>
     </>
   );
 };
