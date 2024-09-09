@@ -8,7 +8,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=1", { mode: "cors" })
+    fetch("https://fakestoreapi.com/products?limit=11", { mode: "cors" })
       .then((res) => {
         if (res.status >= 400) {
           throw new Error("server error");
@@ -32,12 +32,17 @@ const Shop = () => {
       <main className={styles.shopContainer}>
         <h1>Shop</h1>
         <div className={styles.shopItems}>
-          <Item
-            image={items[0].image}
-            title={items[0].title}
-            rating={items[0].rating}
-            price={items[0].price}
-          ></Item>
+          {items.map(
+            (item) => (
+              <Item
+                key={item.id}
+                image={item.image}
+                title={item.title}
+                rating={item.rating}
+                price={item.price}
+              ></Item>
+            )
+          )}
         </div>
       </main>
     </>
