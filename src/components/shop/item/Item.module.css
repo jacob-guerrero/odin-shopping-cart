@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #444;
+  border-radius: 2px;
+}
+
+.itemImgContainer {
+  width: 100%;
+  background-color: white;
+}
+.itemImg {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
+
+.itemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+.itemTitle {
+  font-size: 1.1rem;
+}
+.itemRating {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.itemPrice {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.itemBtn {
+  padding: 0.4rem 0 0.8rem 0;
+}

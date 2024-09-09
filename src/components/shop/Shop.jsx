@@ -32,7 +32,12 @@ const Shop = () => {
       <main className={styles.shopContainer}>
         <h1>Shop</h1>
         <div className={styles.shopItems}>
-          <Item></Item>
+          <Item
+            image={items[0].image}
+            title={items[0].title}
+            rating={items[0].rating}
+            price={items[0].price}
+          ></Item>
         </div>
       </main>
     </>
