@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({cartItems}) => {
   return (
     <nav className={styles.navbar} role="navigation">
       <div className={styles.navbarLeft}>
@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className={styles.navbarRight}>
         <Link to="/cart" className={styles.cartIcon} aria-label="Shopping Cart">
           <i className="fas fa-shopping-cart"></i>
-          <span className={styles.cartCount}>0</span>
+          <span className={styles.cartCount}>{cartItems}</span>
         </Link>
       </div>
     </nav>
