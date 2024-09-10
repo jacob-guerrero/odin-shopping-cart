@@ -20,7 +20,17 @@ const Item = (props) => {
         </div>
         <p className={styles.itemPrice}>${props.price}</p>
         <div className={styles.itemBtn}>
-          <button>Add To Cart</button>
+          {!props.isAdded ? (
+            <button
+              onClick={() => {
+                props.updateAddedItem(props.id); // Update item status
+              }}
+            >
+              Add To Cart
+            </button>
+          ) : (
+            <button disabled>Item Added</button>
+          )}
         </div>
       </div>
     </div>

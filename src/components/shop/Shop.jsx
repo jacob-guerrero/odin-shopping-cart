@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Item from "./item/Item";
 import styles from "./Shop.module.css";
 
-const Shop = () => {
+const useItems = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,10 +16,32 @@ const Shop = () => {
 
         return res.json();
       })
-      .then((json) => setItems(json))
+      .then((json) => {
+        // Add the isAdded key to each item
+        const updatedItems = json.map((item) => ({
+          ...item,
+          isAdded: false, // Initial value
+        }));
+        setItems(updatedItems);
+      })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
+
+  return { items, setItems, error, loading };
+};
+
+const Shop = () => {
+  const { items, setItems, error, loading } = useItems();
+  const updateAddedItem = (itemId) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId
+          ? { ...item, isAdded: !item.isAdded } // Change isAdded status
+          : item
+      )
+    );
+  };
 
   if (!loading) {
     console.log(items);
@@ -32,17 +54,18 @@ const Shop = () => {
       <main className={styles.shopContainer}>
         <h1>Shop</h1>
         <div className={styles.shopItems}>
-          {items.map(
-            (item) => (
-              <Item
-                key={item.id}
-                image={item.image}
-                title={item.title}
-                rating={item.rating}
-                price={item.price}
-              ></Item>
-            )
-          )}
+          {items.map((item) => (
+            <Item
+              key={item.id}
+              id={item.id}
+              image={item.image}
+              title={item.title}
+              rating={item.rating}
+              price={item.price}
+              isAdded={item.isAdded}
+              updateAddedItem={updateAddedItem}
+            ></Item>
+          ))}
         </div>
       </main>
     </>
