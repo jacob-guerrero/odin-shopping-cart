@@ -1,29 +1,29 @@
 import StarRatings from "react-star-ratings";
 import styles from "./Item.module.css";
 
-const Item = (props) => {
+const Item = ({ id, image, title, rating, price, isAdded, updateAddedItem }) => {
   return (
     <div className={styles.item}>
       <div className={styles.itemImgContainer}>
-        <img src={props.image} alt={props.title} className={styles.itemImg} />
+        <img src={image} alt={title} className={styles.itemImg} />
       </div>
       <div className={styles.itemInfoContainer}>
-        <h3 className={styles.itemTitle}>{props.title}</h3>
+        <h3 className={styles.itemTitle}>{title}</h3>
         <div className={styles.itemRating}>
           <StarRatings
-            rating={props.rating.rate}
+            rating={rating.rate}
             starRatedColor="#e3b130"
             starDimension="20px"
             starSpacing="2px"
           ></StarRatings>
-          <p>{props.rating.count}</p>
+          <p>{rating.count}</p>
         </div>
-        <p className={styles.itemPrice}>${props.price}</p>
+        <p className={styles.itemPrice}>${price}</p>
         <div className={styles.itemBtn}>
-          {!props.isAdded ? (
+          {!isAdded ? (
             <button
               onClick={() => {
-                props.updateAddedItem(props.id); // Update item status
+                updateAddedItem(id); // Update item status
               }}
             >
               Add To Cart
