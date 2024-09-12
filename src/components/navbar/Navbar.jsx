@@ -30,5 +30,5 @@ const Navbar = ({cartItems}) => {
     </nav>
   );
 };
-
+          
 export default Navbar;

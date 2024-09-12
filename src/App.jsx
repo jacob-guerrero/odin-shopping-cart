@@ -13,7 +13,7 @@ function App() {
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId
-          ? { ...item, isAdded: !item.isAdded } // Change isAdded status
+          ? { ...item, isAdded: !item.isAdded, qty: !item.isAdded ? 1 : 0 } // Change isAdded status
           : item
       )
     );
@@ -21,7 +21,7 @@ function App() {
 
   // Calculate and update cart items
   useEffect(() => {
-    const count = items.filter((item) => item.isAdded).length;
+    const count = items.reduce((total, item) => total + item.qty, 0);
     setCartItems(count);
   }, [items]);
 
