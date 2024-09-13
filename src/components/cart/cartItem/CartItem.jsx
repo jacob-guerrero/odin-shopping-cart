@@ -10,15 +10,28 @@ const CartItem = ({ id, image, title, price, qty, updateAddedItem }) => {
         <h3 className={styles.itemTitle}>{title}</h3>
         <div className={styles.content}>
           <div className={styles.leftContent}>
-            <button className={`${styles.btnQty} ${styles.btnQtyLeft}`}><i className="fa-solid fa-minus"></i></button>
+            <button
+              className={`${styles.btnQty} ${styles.btnQtyLeft}`}
+              title="Subtract"
+            >
+              <i className="fa-solid fa-minus"></i>
+            </button>
             <p className={styles.itemQty}>{qty}</p>
-            <button className={`${styles.btnQty} ${styles.btnQtyRight}`}><i className="fa-solid fa-plus"></i></button>
+            <button
+              className={`${styles.btnQty} ${styles.btnQtyRight}`}
+              title="Add"
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
           </div>
           <div className={styles.rightContent}>
             <p className={styles.itemPrice}>${price * qty}</p>
           </div>
         </div>
       </div>
+      <button className={styles.btnDelete} title="Delete">
+        <i className="fa-solid fa-trash"></i>
+      </button>
     </div>
   );
 };
