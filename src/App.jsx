@@ -30,6 +30,15 @@ function App() {
     );
   };
 
+  // Delete the item
+  const deleteItem = (itemId) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, isAdded: !item.isAdded, qty: 0 } : item
+      )
+    );
+  };
+
   // Calculate and update cart items
   useEffect(() => {
     const count = items.reduce((total, item) => total + item.qty, 0);
@@ -40,7 +49,14 @@ function App() {
     <>
       <Navbar cartItems={cartItems}></Navbar>
       <Outlet
-        context={{ items, error, loading, updateAddedItem, updateItemQuantity }}
+        context={{
+          items,
+          error,
+          loading,
+          updateAddedItem,
+          updateItemQuantity,
+          deleteItem,
+        }}
       ></Outlet>
     </>
   );

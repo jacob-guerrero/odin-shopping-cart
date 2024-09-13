@@ -21,7 +21,7 @@ const useItems = () => {
           isAdded: true, // Initial value
           qty: 1,
         }));
-        
+
         setItems(updatedItems);
       })
       .catch((error) => setError(error))

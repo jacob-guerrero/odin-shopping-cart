@@ -1,11 +1,20 @@
 import styles from "./CartItem.module.css";
 
-const CartItem = ({ id, image, title, price, qty, updateItemQuantity }) => {
+const CartItem = ({
+  id,
+  image,
+  title,
+  price,
+  qty,
+  updateItemQuantity,
+  deleteItem,
+}) => {
   return (
     <div className={styles.item}>
       <div className={styles.itemImgContainer}>
         <img src={image} alt={title} className={styles.itemImg} />
       </div>
+
       <div className={styles.itemInfoContainer}>
         <h3 className={styles.itemTitle}>{title}</h3>
         <div className={styles.content}>
@@ -35,7 +44,12 @@ const CartItem = ({ id, image, title, price, qty, updateItemQuantity }) => {
           </div>
         </div>
       </div>
-      <button className={styles.btnDelete} title="Delete">
+      
+      <button
+        className={styles.btnDelete}
+        title="Delete"
+        onClick={() => deleteItem(id)}
+      >
         <i className="fa-solid fa-trash"></i>
       </button>
     </div>
