@@ -53,6 +53,7 @@ function App() {
           items,
           error,
           loading,
+          cartItems,
           updateAddedItem,
           updateItemQuantity,
           deleteItem,

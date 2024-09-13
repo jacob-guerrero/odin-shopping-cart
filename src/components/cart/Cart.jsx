@@ -3,7 +3,16 @@ import styles from "./Cart.module.css";
 import CartItem from "./cartItem/CartItem";
 
 const Cart = () => {
-  const { items, updateItemQuantity, deleteItem } = useOutletContext();
+  const { items, cartItems, updateItemQuantity, deleteItem } =
+    useOutletContext();
+  const subTotal = items.reduce(
+    (total, item) => total + item.qty * item.price,
+    0
+  );
+  let USDollar = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   return (
     <main className={styles.cartContainer}>
@@ -27,8 +36,30 @@ const Cart = () => {
         </div>
       </section>
 
-      <section className={styles.cartCheckOut}>
-        <h2 className="checkOutTitle">Check Out</h2>
+      <section className={styles.cartCheckout}>
+        <h2 className="checkoutTitle">Checkout</h2>
+        <div className="checkcoutContainer">
+          <h3>Subtotal ({cartItems} items):</h3>
+          <p>
+            {USDollar.format(
+              Math.round((subTotal + Number.EPSILON) * 100) / 100
+            )}
+          </p>
+          <h3>Discount (10%):</h3>
+          <p>
+            -{" "}
+            {USDollar.format(
+              Math.round((subTotal / 10 + Number.EPSILON) * 100) / 100
+            )}
+          </p>
+          <h3>Total:</h3>
+          <p>
+            {USDollar.format(
+              Math.round((subTotal - subTotal / 10 + Number.EPSILON) * 100) /
+                100
+            )}
+          </p>
+        </div>
       </section>
     </main>
   );

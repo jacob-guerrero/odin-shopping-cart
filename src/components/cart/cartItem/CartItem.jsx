@@ -9,6 +9,11 @@ const CartItem = ({
   updateItemQuantity,
   deleteItem,
 }) => {
+  let USDollar = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <div className={styles.item}>
       <div className={styles.itemImgContainer}>
@@ -39,12 +44,14 @@ const CartItem = ({
           </div>
           <div className={styles.rightContent}>
             <p className={styles.itemPrice}>
-              ${Math.round((price * qty + Number.EPSILON) * 100) / 100}
+              {USDollar.format(
+                Math.round((price * qty + Number.EPSILON) * 100) / 100
+              )}
             </p>
           </div>
         </div>
       </div>
-      
+
       <button
         className={styles.btnDelete}
         title="Delete"

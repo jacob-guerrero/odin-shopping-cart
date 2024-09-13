@@ -1,6 +1,7 @@
 .cartContainer {
   display: flex;
   width: 100%;
+  gap: 1rem;
 }
 .cartItems {
   width: 60%;
@@ -13,6 +14,6 @@
   gap: 1rem;
 }
 
-.cartCheckOut {
+.cartCheckout {
   width: 40%;
 }

@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({cartItems}) => {
+const Navbar = ({ cartItems }) => {
   return (
     <nav className={styles.navbar} role="navigation">
       <div className={styles.navbarLeft}>
@@ -30,5 +30,5 @@ const Navbar = ({cartItems}) => {
     </nav>
   );
 };
-          
+
 export default Navbar;
