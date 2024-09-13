@@ -3,7 +3,7 @@ import Item from "./item/Item";
 import styles from "./Shop.module.css";
 
 const Shop = () => {
-  const [items, error, loading, updateAddedItem] = useOutletContext();
+  const { items, error, loading, updateAddedItem } = useOutletContext();
 
   if (!loading) {
     console.log(items);

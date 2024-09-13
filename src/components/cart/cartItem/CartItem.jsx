@@ -1,6 +1,6 @@
 import styles from "./CartItem.module.css";
 
-const CartItem = ({ id, image, title, price, qty, updateAddedItem }) => {
+const CartItem = ({ id, image, title, price, qty, updateItemQuantity }) => {
   return (
     <div className={styles.item}>
       <div className={styles.itemImgContainer}>
@@ -13,6 +13,8 @@ const CartItem = ({ id, image, title, price, qty, updateAddedItem }) => {
             <button
               className={`${styles.btnQty} ${styles.btnQtyLeft}`}
               title="Subtract"
+              onClick={() => updateItemQuantity(id, qty - 1)}
+              disabled={qty <= 1}
             >
               <i className="fa-solid fa-minus"></i>
             </button>
@@ -20,12 +22,16 @@ const CartItem = ({ id, image, title, price, qty, updateAddedItem }) => {
             <button
               className={`${styles.btnQty} ${styles.btnQtyRight}`}
               title="Add"
+              onClick={() => updateItemQuantity(id, qty + 1)}
+              disabled={qty >= 99}
             >
               <i className="fa-solid fa-plus"></i>
             </button>
           </div>
           <div className={styles.rightContent}>
-            <p className={styles.itemPrice}>${price * qty}</p>
+            <p className={styles.itemPrice}>
+              ${Math.round((price * qty + Number.EPSILON) * 100) / 100}
+            </p>
           </div>
         </div>
       </div>

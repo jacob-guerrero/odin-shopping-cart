@@ -3,7 +3,7 @@ import styles from "./Cart.module.css";
 import CartItem from "./cartItem/CartItem";
 
 const Cart = () => {
-  const [items, updateAddedItem] = useOutletContext();
+  const {items, updateItemQuantity} = useOutletContext();
 
   return (
     <main className={styles.cartContainer}>
@@ -20,7 +20,7 @@ const Cart = () => {
                 title={item.title}
                 price={item.price}
                 qty={item.qty}
-                updateAddedItem={updateAddedItem}
+                updateItemQuantity={updateItemQuantity}
               />
             ))}
         </div>

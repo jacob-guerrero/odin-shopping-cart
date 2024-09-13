@@ -19,6 +19,17 @@ function App() {
     );
   };
 
+  // Update the item quantity
+  const updateItemQuantity = (itemId, quantity) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId
+          ? { ...item, isAdded: quantity > 0, qty: quantity }
+          : item
+      )
+    );
+  };
+
   // Calculate and update cart items
   useEffect(() => {
     const count = items.reduce((total, item) => total + item.qty, 0);
@@ -28,7 +39,9 @@ function App() {
   return (
     <>
       <Navbar cartItems={cartItems}></Navbar>
-      <Outlet context={[items, error, loading, updateAddedItem]}></Outlet>
+      <Outlet
+        context={{ items, error, loading, updateAddedItem, updateItemQuantity }}
+      ></Outlet>
     </>
   );
 }
