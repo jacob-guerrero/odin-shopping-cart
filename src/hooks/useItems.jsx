@@ -18,8 +18,8 @@ const useItems = () => {
         // Add the isAdded key to each item
         const updatedItems = json.map((item) => ({
           ...item,
-          isAdded: true, // Initial value
-          qty: 1,
+          isAdded: false, // Initial value
+          qty: 0,
         }));
 
         setItems(updatedItems);

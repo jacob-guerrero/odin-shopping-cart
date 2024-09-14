@@ -14,7 +14,7 @@ const Shop = () => {
   return (
     <>
       <main className={styles.shopContainer}>
-        <h1>Shop</h1>
+        <h1 className={styles.shopTitle}>Shop</h1>
         <div className={styles.shopItems}>
           {items.map((item) => (
             <Item
