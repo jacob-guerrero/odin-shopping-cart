@@ -71,9 +71,21 @@ const Cart = () => {
             <button className={styles.btnCheckout}>Continue to Payment</button>
           </div>
           <div className={styles.cardsContainer}>
-            <img src="src\assets\mastercard.svg" alt="mastercard logo" className={styles.cardLogo}/>
-            <img src="src\assets\visa.svg" alt="visa logo" className={styles.cardLogo}/>
-            <img src="src\assets\paypal.svg" alt="paypal logo" className={styles.cardLogo}/>
+            <img
+              src="src\assets\mastercard.svg"
+              alt="mastercard logo"
+              className={styles.cardLogo}
+            />
+            <img
+              src="src\assets\visa.svg"
+              alt="visa logo"
+              className={styles.cardLogo}
+            />
+            <img
+              src="src\assets\paypal.svg"
+              alt="paypal logo"
+              className={styles.cardLogo}
+            />
           </div>
         </div>
       </section>

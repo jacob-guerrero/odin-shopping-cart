@@ -5,11 +5,19 @@ import styles from "./Shop.module.css";
 const Shop = () => {
   const { items, error, loading, updateAddedItem } = useOutletContext();
 
-  if (!loading) {
-    console.log(items);
-  }
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading)
+    return (
+      <main className={styles.loadContainer}>
+        <div className={styles.loader}></div>
+      </main>
+    );
+
+  if (error)
+    return (
+      <main className={styles.errorContainer}>
+        <p className={styles.errorText}>A network error was encountered</p>
+      </main>
+    );
 
   return (
     <>
