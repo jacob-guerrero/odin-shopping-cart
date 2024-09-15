@@ -13,14 +13,14 @@ const Home = () => {
           />
         </div>
         <div className={styles.heroTextContainer}>
-          <h1>Experience Your Own Heaven</h1>
-          <p>
+          <h1 className={styles.heroTextTitle}>Experience Your Own Heaven</h1>
+          <p className={styles.heroTextParagraph}>
             Step into a world where fashion meets serenity. Exclusive
             collections designed to elevate your Style. Bring a touch of
             elegance to every occasion.
           </p>
           <Link to="shop">
-            <button>Shop Now</button>
+            <button className={styles.heroBtn}>Shop Now</button>
           </Link>
         </div>
       </main>
