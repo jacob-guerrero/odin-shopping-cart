@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import CartItem from "./cartItem/CartItem";
 
@@ -13,6 +13,17 @@ const Cart = () => {
     style: "currency",
     currency: "USD",
   });
+
+  if (cartItems === 0) {
+    return (
+      <main className={styles.noItemsContainer}>
+        <p className={styles.noItemsText}>Your cart is empty!</p>
+        <Link to="/shop">
+          <button className={styles.noItemsBtn}>Go To Shop</button>
+        </Link>
+      </main>
+    );
+  }
 
   return (
     <main className={styles.cartContainer}>
