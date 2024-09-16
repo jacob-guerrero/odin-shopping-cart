@@ -1,0 +1,23 @@
+.errorContainer {
+  width: 100%;
+  height: calc(100vh - 12vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #01161e;
+}
+.errorTitle {
+  font-size: 3.6rem;
+}
+.errorText {
+  font-size: 1.2rem;
+}
+.errorBtn {
+  font-size: 1.1rem;
+}
+.errorBtn:hover {
+  border-color: #ebf9fe;
+}

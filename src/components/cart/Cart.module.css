@@ -106,3 +106,6 @@
 .noItemsBtn {
   font-size: 1.1rem;
 }
+.noItemsBtn:hover {
+  border-color: #ebf9fe;
+}
