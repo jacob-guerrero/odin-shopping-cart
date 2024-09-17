@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: #eee;
   padding: 1rem;
   gap: 1rem;
   margin: 0;
@@ -13,27 +13,32 @@
   z-index: 10;
 }
 
-.navbarLeft{
+.navbarLeft {
   width: 70%;
   display: flex;
 }
-.navbarLeft .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  color: #eee;
   text-decoration: none;
 }
+.logo {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
 
-.navbarCenter .navLinks {
+.navLinks {
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+}
+.navLinks {
   list-style-type: none;
   display: flex;
   margin: 0;
   padding: 0;
   gap: 1rem;
 }
-
-.navbarCenter .navLinks a {
-  color: #fff;
+.navLinks a {
+  color: #eee;
   text-decoration: none;
 }
 
@@ -41,25 +46,49 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 1.4rem;
 }
-
-.navbarRight .cartIcon,
-.navbarRight .userIcon {
-  color: #fff;
+.cartIcon,
+.userIcon {
+  color: #eee;
   text-decoration: none;
   position: relative;
 }
-
-.navbarRight .cartCount {
+.cartIcon {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+.cartCount {
   background-color: #f44336;
-  color: #fff;
+  color: #eee;
   border-radius: 50%;
   padding: 0.1rem 0.5rem;
   font-size: 0.9rem;
   position: absolute;
   top: -0.6rem;
   right: -0.6rem;
+}
+
+.navLinks li a {
+  position: relative;
+}
+.navLinks li a:before,
+.cartIcon:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #eff6e0;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.navLinks li a:hover:before,
+.cartIcon:hover:before {
+  width: 100%;
+}
+.navLinks .active a:before,
+.cartIcon.active:before {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

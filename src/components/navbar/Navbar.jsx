@@ -1,7 +1,9 @@
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ cartItems }) => {
+  let location = useLocation();
+
   return (
     <nav className={styles.navbar} role="navigation">
       <div className={styles.navbarLeft}>
@@ -12,17 +14,23 @@ const Navbar = ({ cartItems }) => {
 
       <div className={styles.navbarCenter}>
         <ul className={styles.navLinks}>
-          <li>
+          <li className={location.pathname === "/" ? styles.active : ""}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className={location.pathname === "/shop" ? styles.active : ""}>
             <Link to="/shop">Shop</Link>
           </li>
         </ul>
       </div>
 
       <div className={styles.navbarRight}>
-        <Link to="/cart" className={styles.cartIcon} aria-label="Shopping Cart">
+        <Link
+          to="/cart"
+          className={`${styles.cartIcon} ${
+            location.pathname === "/cart" ? styles.active : ""
+          }`}
+          aria-label="Shopping Cart"
+        >
           <i className="fas fa-shopping-cart"></i>
           <span className={styles.cartCount}>{cartItems}</span>
         </Link>

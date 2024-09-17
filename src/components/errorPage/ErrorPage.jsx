@@ -7,7 +7,7 @@ const ErrorPage = () => {
       <main className={styles.errorContainer}>
         <h1 className={styles.errorTitle}>Oops!</h1>
         <p className={styles.errorText}>Page Not Found</p>
-        <Link to="/home">
+        <Link to="/">
           <button className={styles.errorBtn}>Back To Home</button>
         </Link>
       </main>
