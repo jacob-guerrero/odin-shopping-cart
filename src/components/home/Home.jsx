@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import assets from "../../assets/assetsManager";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
       <main className={styles.heroContainer}>
         <div className={styles.heroImageContainer}>
           <img
-            src="/src/assets/model1-home.jpg"
+            src={assets.model}
             alt="Man in White Suit Wearing Brown Hat Standing on Green Grass Field"
             className={styles.heroImage}
           />

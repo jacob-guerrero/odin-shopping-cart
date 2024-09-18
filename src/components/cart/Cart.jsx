@@ -1,5 +1,6 @@
 import { useOutletContext, Link } from "react-router-dom";
 import CartItem from "./cartItem/CartItem";
+import assets from "../../assets/assetsManager";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
@@ -94,17 +95,17 @@ const Cart = () => {
           </div>
           <div className={styles.cardsContainer}>
             <img
-              src="/src/assets/mastercard.svg"
+              src={assets.mastercard}
               alt="mastercard logo"
               className={styles.cardLogo}
             />
             <img
-              src="/src/assets/visa.svg"
+              src={assets.visa}
               alt="visa logo"
               className={styles.cardLogo}
             />
             <img
-              src="/src/assets/paypal.svg"
+              src={assets.paypal}
               alt="paypal logo"
               className={styles.cardLogo}
             />
