@@ -7,7 +7,7 @@ const Home = () => {
       <main className={styles.heroContainer}>
         <div className={styles.heroImageContainer}>
           <img
-            src="src\assets\model1-home.jpg"
+            src="/src/assets/model1-home.jpg"
             alt="Man in White Suit Wearing Brown Hat Standing on Green Grass Field"
             className={styles.heroImage}
           />

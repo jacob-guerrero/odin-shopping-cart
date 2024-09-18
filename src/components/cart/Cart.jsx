@@ -94,17 +94,17 @@ const Cart = () => {
           </div>
           <div className={styles.cardsContainer}>
             <img
-              src="src\assets\mastercard.svg"
+              src="/src/assets/mastercard.svg"
               alt="mastercard logo"
               className={styles.cardLogo}
             />
             <img
-              src="src\assets\visa.svg"
+              src="/src/assets/visa.svg"
               alt="visa logo"
               className={styles.cardLogo}
             />
             <img
-              src="src\assets\paypal.svg"
+              src="/src/assets/paypal.svg"
               alt="paypal logo"
               className={styles.cardLogo}
             />
