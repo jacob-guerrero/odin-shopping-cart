@@ -109,3 +109,22 @@
 .noItemsBtn:hover {
   border-color: #ebf9fe;
 }
+
+@media (max-width: 768px) {
+  .cartContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cartItems {
+    width: 100%;
+  }
+
+  .cartCheckout {
+    width: 100%;
+    max-width: 100%;
+  }
+  .checkoutContainer {
+    max-width: 300px;
+    align-self: center;
+  }
+}

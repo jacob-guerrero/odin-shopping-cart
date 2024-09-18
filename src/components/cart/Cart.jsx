@@ -14,6 +14,10 @@ const Cart = () => {
     currency: "USD",
   });
 
+  const handleOrder = () => {
+    alert("Your order has been placed! :)");
+  };
+
   if (cartItems === 0) {
     return (
       <main className={styles.noItemsContainer}>
@@ -79,7 +83,9 @@ const Cart = () => {
             </p>
           </div>
           <div className={styles.btnCheckoutContainer}>
-            <button className={styles.btnCheckout}>Continue to Payment</button>
+            <button className={styles.btnCheckout} onClick={() => handleOrder()}>
+              Continue to Payment
+            </button>
           </div>
           <div className={styles.cardsContainer}>
             <img

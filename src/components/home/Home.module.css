@@ -64,3 +64,19 @@
   outline: 1px solid #f00 !important;
 }
  */
+
+@media (max-width: 768px) {
+  .heroTextContainer {
+    padding: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .heroImageContainer {
+    width: 100%;
+  }
+  .heroTextContainer {
+    width: 80%;
+    padding: 0.7rem 1rem;
+    transform: translate(-50%, -50%);
+  }
+}
