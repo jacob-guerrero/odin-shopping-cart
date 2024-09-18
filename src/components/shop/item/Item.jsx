@@ -1,7 +1,16 @@
 import StarRatings from "react-star-ratings";
+import PropTypes from "prop-types";
 import styles from "./Item.module.css";
 
-const Item = ({ id, image, title, rating, price, isAdded, updateAddedItem }) => {
+const Item = ({
+  id,
+  image,
+  title,
+  rating,
+  price,
+  isAdded,
+  updateAddedItem,
+}) => {
   return (
     <div className={styles.item}>
       <div className={styles.itemImgContainer}>
@@ -35,6 +44,16 @@ const Item = ({ id, image, title, rating, price, isAdded, updateAddedItem }) => 
       </div>
     </div>
   );
+};
+
+Item.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  rating: PropTypes.object,
+  price: PropTypes.number,
+  isAdded: PropTypes.bool,
+  updateAddedItem: PropTypes.func,
 };
 
 export default Item;

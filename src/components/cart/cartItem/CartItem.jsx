@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./CartItem.module.css";
 
 const CartItem = ({
@@ -61,6 +62,17 @@ const CartItem = ({
       </button>
     </div>
   );
+};
+
+CartItem.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  qty: PropTypes.number,
+  isAdded: PropTypes.bool,
+  updateItemQuantity: PropTypes.func,
+  deleteItem: PropTypes.func,
 };
 
 export default CartItem;

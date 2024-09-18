@@ -1,14 +1,16 @@
 import { useOutletContext, Link } from "react-router-dom";
-import styles from "./Cart.module.css";
 import CartItem from "./cartItem/CartItem";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
   const { items, cartItems, updateItemQuantity, deleteItem } =
     useOutletContext();
+
   const subTotal = items.reduce(
     (total, item) => total + item.qty * item.price,
     0
   );
+
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -83,7 +85,10 @@ const Cart = () => {
             </p>
           </div>
           <div className={styles.btnCheckoutContainer}>
-            <button className={styles.btnCheckout} onClick={() => handleOrder()}>
+            <button
+              className={styles.btnCheckout}
+              onClick={() => handleOrder()}
+            >
               Continue to Payment
             </button>
           </div>

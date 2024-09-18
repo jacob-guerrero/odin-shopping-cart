@@ -1,5 +1,6 @@
-import styles from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import styles from "./Navbar.module.css";
 
 const Navbar = ({ cartItems }) => {
   let location = useLocation();
@@ -37,6 +38,10 @@ const Navbar = ({ cartItems }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  cartItems: PropTypes.number,
 };
 
 export default Navbar;
