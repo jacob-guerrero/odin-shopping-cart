@@ -37,7 +37,7 @@ npm run dev
 ```
 
 ## 🚀 Deployment
-Deployed using Netlify.Live Demo [here](https://shopping-cart-jg.netlify.app)
+Deployed using Netlify. Live Demo [here](https://shopping-cart-jg.netlify.app)
 
 ## 📝 Future Improvements
 - Add checkout functionality.
