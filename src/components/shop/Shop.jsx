@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import Item from "./item/Item";
 import styles from "./Shop.module.css";
+import ScrollToTop from "./btnToTop/ScrollToTop";
 
 const Shop = () => {
   const { items, error, loading, updateAddedItem } = useOutletContext();
@@ -37,6 +38,8 @@ const Shop = () => {
             ></Item>
           ))}
         </div>
+
+        <ScrollToTop />
       </main>
     </>
   );
